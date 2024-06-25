@@ -6,8 +6,8 @@
         <mesh>left_top.vtu</mesh>
         <mesh>right_bottom.vtu</mesh>
         <mesh>right_top.vtu</mesh>
-		<mesh>bottom.vtu</mesh>
-		<mesh>top.vtu</mesh>
+				<mesh>bottom.vtu</mesh>
+				<mesh>top.vtu</mesh>
         <mesh>right.vtu</mesh>
         <mesh>left.vtu</mesh>
     </meshes>
@@ -16,7 +16,7 @@
             <name>RM</name>
             <type>RICHARDS_MECHANICS</type>
             <integration_order>4</integration_order>
-            <dimension>2</dimension>
+            <!-- <dimension>2</dimension> -->
             <constitutive_relation id="0">
                 <type>LinearElasticOrthotropic</type>
                 <youngs_moduli>E_l0</youngs_moduli>
@@ -58,7 +58,7 @@
                         </property>
                         <property>
                             <name>density</name>
-							<type>Parameter</type>
+														<type>Parameter</type>
                             <parameter_name>density_water</parameter_name>
                         </property>
                     </properties>
@@ -91,7 +91,7 @@
                     <name>permeability</name>
                     <type>Parameter</type>
                     <parameter_name>permeability_l0</parameter_name>
-                </property>            
+                </property>
                 <property>
                     <name>saturation</name>
                     <type>SaturationVanGenuchten</type>
@@ -132,7 +132,7 @@
                         </property>
                         <property>
                             <name>density</name>
-							<type>Parameter</type>
+														<type>Parameter</type>
                             <parameter_name>density_water</parameter_name>
                         </property>
                     </properties>
@@ -152,7 +152,7 @@
                            <exponents>1 1 1</exponents>
                            <lower_saturation_limit>0.2</lower_saturation_limit>
                            <upper_saturation_limit>1.0</upper_saturation_limit>
-                        </property> 
+                        </property>
                     </properties>
                 </phase>
             </phases>
@@ -173,7 +173,7 @@
                     <name>permeability</name>
                     <type>Parameter</type>
                     <parameter_name>permeability_l1</parameter_name>
-                </property>           
+                </property>
                 <property>
                     <name>saturation</name>
                     <type>SaturationVanGenuchten</type>
@@ -272,7 +272,7 @@
             <name>G_l1</name>
             <type>Constant</type>
             <values>208e6 208e6 208e6</values>
-        </parameter>        
+        </parameter>
         <parameter>
             <name>nu0</name>
             <type>Constant</type>
@@ -399,26 +399,26 @@
             <name>pressure</name>
             <components>1</components>
             <order>1</order>
-            <initial_condition>pressure_bc_ic</initial_condition>            
+            <initial_condition>pressure_bc_ic</initial_condition>
             <boundary_conditions>
                <!--<boundary_condition>
-					<mesh>top</mesh>
+							 			<mesh>top</mesh>
                     <type>Dirichlet</type>
                     <parameter>pressure_bc_top</parameter>
                 </boundary_condition>-->
                 <boundary_condition>
-					<mesh>right</mesh>
+										<mesh>right</mesh>
                     <type>Dirichlet</type>
                     <parameter>pressure_bc_ic</parameter>
-                </boundary_condition>
-                <boundary_condition>
-					<mesh>left_bottom</mesh>
+            	  </boundary_condition>
+            	  <boundary_condition>
+										<mesh>left_bottom</mesh>
                     <type>Dirichlet</type>
                     <parameter>inflow</parameter>
                 </boundary_condition>
             </boundary_conditions>
         </process_variable>
-    </process_variables>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+			    </process_variables>
     <nonlinear_solvers>
         <nonlinear_solver>
             <name>basic_newton</name>
